@@ -1,35 +1,28 @@
 #!/usr/bin/env nextflow
 
-params.greeting = 'Hello world! This is a bit longer test, because I wanna see if tower is really that funny as everyone is saying!'
-greeting_ch = Channel.of(params.greeting)
+params.vcfpath = '$projectDir/data/*recode.vcf'
+params.indlist = '$projectDir/data/inds_freq.txt'
+params.outdir = "result"
 
-process SPLITLETTERS {
+
+process VCFTOGENOT {
+    container 'lfreitasl/vcfprocess:latest'
+    publishDir params.outdir, mode:copy
+
     input:
     val x
+    val Z
 
     output:
-    path 'letras_*'
+    path 'matrix_genotype_*'
 
     """
-    printf '$x' | split -b 2 - letras_
-    """
-}
-
-process CONVERTTOUPPER {
-    input:
-    path y
-
-    output:
-    stdout
-
-    """
-    cat $y | tr '[a-z]' '[A-Z]' 
+    vcfconverter.R $x $z
     """
 }
 
 workflow {
-    letters_ch = SPLITLETTERS(greeting_ch)
-    results_ch = CONVERTTOUPPER(letters_ch.flatten())
-    results_ch.view{ it }
+    matrices_ch = VCFTOGENOT(greeting_ch)
+    matrices_ch.view{ it }
 }
 
