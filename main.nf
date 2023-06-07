@@ -7,7 +7,7 @@ params.outdir = "result"
 
 process VCFTOGENOT {
     container 'lfreitasl/vcfprocess:latest'
-    publishDir params.outdir, mode:copy
+    publishDir $"params.outdir", mode:'copy'
 
     input:
     val x
