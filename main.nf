@@ -24,6 +24,6 @@ process VCFTOGENOT {
 }
 
 workflow {
-    matrices_ch = VCFTOGENOT(params.vcfpath,params.indlist)
+    matrices_ch = VCFTOGENOT(Channel.fromPath(params.vcfpath),params.indlist)
     matrices_ch.view{ it }
 }
