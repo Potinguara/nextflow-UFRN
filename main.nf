@@ -22,7 +22,7 @@ process VCFTOGENOT {
 }
 
 workflow {
-    matrices_ch = VCFTOGENOT(greeting_ch)
+    matrices_ch = VCFTOGENOT(params.vcfpath,params.indlist)
     matrices_ch.view{ it }
 }
 
