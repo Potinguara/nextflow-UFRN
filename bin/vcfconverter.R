@@ -70,6 +70,7 @@ twocol<-function(vcfpath, threecols=T){
 matriz<-twocol(vcfp, threecols = T)
 
 inds<-read.table(ind_to_freq)
+inds
 ind_freqed<-matriz[row.names(matriz)%in%as.vector(inds[,1]),]
 
 genotypes<-function(data=NA, freq=NA){
@@ -181,7 +182,7 @@ genotypes<-function(data=NA, freq=NA){
   return(data)
 }
 
-testgen<-genotypes(data = matriz, freq = inds_freqed)
+testgen<-genotypes(data = matriz, freq = ind_freqed)
 
 
 remove_invariable<-function(genotyp){
