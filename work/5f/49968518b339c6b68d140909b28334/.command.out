@@ -1,35 +1,0 @@
-Scanning file to determine attributes.
-File attributes:
-  meta lines: 10
-  header_line: 11
-  variant count: 3170
-  column count: 112
-Meta line 10 read in.
-All meta lines processed.
-gt matrix initialized.
-Character matrix gt created.
-  Character matrix gt rows: 3170
-  Character matrix gt cols: 112
-  skip: 0
-  nrows: 3170
-  row_num: 0
-Processed variant 1000Processed variant 2000Processed variant 3000Processed variant: 3170
-All variants processed
-Scanning file to determine attributes.
-File attributes:
-  meta lines: 10
-  header_line: 11
-  variant count: 3170
-  column count: 112
-Meta line 10 read in.
-All meta lines processed.
-gt matrix initialized.
-Character matrix gt created.
-  Character matrix gt rows: 3170
-  Character matrix gt cols: 112
-  skip: 0
-  nrows: 3170
-  row_num: 0
-Processed variant 1000Processed variant 2000Processed variant 3000Processed variant: 3170
-All variants processed
-Variant 0 processedVariant 1000 processedVariant 2000 processedVariant 3000 processedVariant 3170 processed

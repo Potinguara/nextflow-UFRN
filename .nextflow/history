@@ -1,5 +1,0 @@
-2023-06-07 13:00:25	2.2s	jolly_ekeblad	ERR	648390d24a1a6a7a164a88c327c6747d	f5146f5a-54c1-41ad-a867-db903a013f84	nextflow run main.nf
-2023-06-07 13:03:06	12.6s	condescending_bernard	ERR	648390d24a1a6a7a164a88c327c6747d	ec20aa82-d6ba-46ed-8e41-098bd0d1faae	nextflow run main.nf
-2023-06-07 13:06:00	17.1s	suspicious_torvalds	ERR	648390d24a1a6a7a164a88c327c6747d	567b9c80-d3ac-49d2-98b2-2748bd97cf4f	nextflow run main.nf
-2023-06-07 13:08:07	11.7s	nostalgic_williams	ERR	648390d24a1a6a7a164a88c327c6747d	a6a26872-de12-4651-a861-e6c98b92aca7	nextflow run main.nf
-2023-06-07 13:09:40	24.8s	nasty_leibniz	ERR	648390d24a1a6a7a164a88c327c6747d	af4d9a67-758c-4d61-a325-75135fab5b2d	nextflow run main.nf
