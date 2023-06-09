@@ -13,7 +13,7 @@ process VCFTOGENOT {
     val z
 
     output:
-    path 'SNPs*'
+    path '*.txt'
 
     """
     vcfconverter.R $x $z
@@ -30,7 +30,7 @@ process HIERARCHCLUST {
     path genotype
 
     output:
-    path 'fplot*'
+    path '*.pdf'
 
     """
     hierarchclust.py $genotype

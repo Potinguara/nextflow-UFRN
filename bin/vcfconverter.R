@@ -202,4 +202,7 @@ remove_invariable<-function(genotyp){
 
 final_matrix<-remove_invariable(testgen)
 
-write.table(final_matrix, "SNPs_genotype.txt")
+filename<-basename(vcfp)
+outname<-sub(".recode.vcf","",basename(vcfp))
+outname<-paste(outname, ".genotype.txt", sep = "")
+write.table(final_matrix, outname)

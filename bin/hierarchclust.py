@@ -43,7 +43,10 @@ hierarchy.dendrogram(Z_rows, orientation='left', ax=axs[1])
 
 g = sns.clustermap(samples_sflavius, row_linkage=Z_rows, col_linkage=Z_columns)
 
-g.savefig('fplot.pdf')
+
+file=os.path.basename(folder)
+outname=file.split(".", 1)[0] + "_hierarch_plot.pdf"
+g.savefig(outname)
 
 
 
