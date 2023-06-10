@@ -9,8 +9,8 @@ process VCFTOGENOT {
     container 'lfreitasl/vcfprocess:latest'
     
     input:
-    val x
-    val z
+    path x
+    path z
 
     output:
     path '*.txt'
