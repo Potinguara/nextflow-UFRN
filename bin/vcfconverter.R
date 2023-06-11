@@ -109,7 +109,7 @@ genotypes<-function(data=NA, freq=NA){
         if (unicos_l2[1]==unicos_l1[1]){
           l1_al1<-sum(as.numeric(freq[,(i-1)]==unicos_l1[1]),na.rm = T)
           l2_al1<-sum(as.numeric(freq[,(i-2)]==unicos_l2[1]),na.rm = T)
-          al1f<-l1_al1+l2_al2
+          al1f<-l1_al1+l2_al1
           
           l1_al2<-sum(as.numeric(freq[,(i-2)]==unicos_l1[2]),na.rm = T)
           al2f<-l1_al2
