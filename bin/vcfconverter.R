@@ -196,6 +196,11 @@ remove_invariable<-function(genotyp){
       col<-colnames(genotyp)[i]
       t[col]<-genotyp[,i]
     }
+    if (sum(is.na(genotyp[,colnames(genotyp)[i]]))<20){
+      col<-colnames(genotyp)[i]
+      t[col]<-genotyp[,i]
+    }
+    if(sum(is.na(myt[,i]))>65){print(sum(is.na(myt[,i])))}
   }
   return(t)
 }
