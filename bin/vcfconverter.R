@@ -188,17 +188,15 @@ testgen<-genotypes(data = matriz, freq = ind_freqed)
 remove_invariable<-function(genotyp){
   t<-data.frame(row.names = row.names(genotyp))
   for (i in 1:length(colnames(genotyp))){
-    if (length(na.omit(unique(genotyp[,colnames(genotyp)[i]])))==2){
-      col<-colnames(genotyp)[i]
-      t[col]<-genotyp[,i]
-    }
-    if (length(na.omit(unique(genotyp[,colnames(genotyp)[i]])))==3){
-      col<-colnames(genotyp)[i]
-      t[col]<-genotyp[,i]
-    }
     if (sum(is.na(genotyp[,colnames(genotyp)[i]]))<20){
-      col<-colnames(genotyp)[i]
-      t[col]<-genotyp[,i]
+      if (length(na.omit(unique(genotyp[,colnames(genotyp)[i]])))==2){
+        col<-colnames(genotyp)[i]
+        t[col]<-genotyp[,i]
+      }
+      if (length(na.omit(unique(genotyp[,colnames(genotyp)[i]])))==3){
+        col<-colnames(genotyp)[i]
+        t[col]<-genotyp[,i]
+      }
     }
   }
   return(t)
