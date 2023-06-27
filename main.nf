@@ -39,7 +39,7 @@ process HIERARCHCLUST {
 }
 
 workflow {
-    matrices_ch = VCFTOGENOT(Channel.fromPath(params.vcfpath),params.indlist)
-    clusters_ch = HIERARCHCLUST(matrices_ch.out.genotype)
+    VCFTOGENOT(Channel.fromPath(params.vcfpath),params.indlist)
+    clusters_ch = HIERARCHCLUST(VCFTOGENOT.out.genotype)
     clusters_ch.view{ it }
 }
