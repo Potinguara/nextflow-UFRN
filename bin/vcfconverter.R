@@ -208,3 +208,21 @@ filename<-basename(vcfp)
 outname<-sub(".recode.vcf","",basename(vcfp))
 outname<-paste(outname, ".genotype.txt", sep = "")
 write.table(final_matrix, outname)
+
+get_snpinfo<-function(vcfpath){
+myvcf=read.vcfR(vcfp)
+snpsinfo<-as.data.frame(myvcf@fix)
+maf<-as.data.frame(maf(myvcf))
+maf<-maf[maf$Frequency!=0,] #Pegando apenas os locus em que há um alelo menor
+snpsinfo<-snpsinfo[snpsinfo$ID%in%row.names(maf),]
+snpsinfo<-snpsinfo[1:3]
+return(snpsinfo)
+}
+
+myvarsinfo<-get_snpinfo(vcfp)
+
+filename<-basename(vcfp)
+outname<-sub(".recode.vcf","",basename(vcfp))
+outname<-paste(outname, ".snpinfo.txt", sep = "")
+
+write.table(myvarsinfo, outname, quote = F, row.names = F, col.names = F)

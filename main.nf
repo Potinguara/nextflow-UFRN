@@ -13,7 +13,8 @@ process VCFTOGENOT {
     path z
 
     output:
-    path '*.txt'
+    path '*.genotype.txt', emit: genotype
+    path '*.snpinfo.txt', emit: snpinfo
 
     """
     vcfconverter.R $x $z
@@ -39,6 +40,6 @@ process HIERARCHCLUST {
 
 workflow {
     matrices_ch = VCFTOGENOT(Channel.fromPath(params.vcfpath),params.indlist)
-    clusters_ch = HIERARCHCLUST(matrices_ch)
+    clusters_ch = HIERARCHCLUST(matrices_ch.out.genotype)
     clusters_ch.view{ it }
 }
